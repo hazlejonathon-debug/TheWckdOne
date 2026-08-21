@@ -1,1 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TheWckdOne — Live &amp; Merch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<!-- ============ NAV ============ -->
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="#top" class="brand">TheWckd<span>One</span></a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" id="siteNav">
+      <a href="#schedule">Schedule</a>
+      <a href="#merch">Merch</a>
+      <a href="#socials">Follow</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="bolt" aria-hidden="true"></div>
+  <div class="hero-inner">
+
+    <!-- Signature element: on-air status light -->
+    <div class="onair" id="onairBadge" data-status="offline">
+      <span class="onair-dot"></span>
+      <span class="onair-text" id="onairText">OFFLINE</span>
+    </div>
+
+    <h1 class="hero-title">TheWckd<br>One</h1>
+    <p class="hero-sub" id="heroSub">Next stream: <span id="nextStreamTime">Sat 7:00 PM CT</span></p>
+
+    <div class="hero-actions">
+      <a href="https://twitch.tv/YOUR_CHANNEL" class="btn btn-primary" target="_blank" rel="noopener">Watch on Twitch</a>
+      <a href="#merch" class="btn btn-ghost">Shop Merch</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SCHEDULE STRIP ============ -->
+<section class="schedule" id="schedule">
+  <div class="schedule-inner">
+    <h2 class="section-label">On Air</h2>
+    <ul class="schedule-list">
+      <li><span class="day">Tue</span><span class="time">7:00 PM CT</span><span class="game">Just Chatting</span></li>
+      <li><span class="day">Thu</span><span class="time">7:00 PM CT</span><span class="game">Ranked Grind</span></li>
+      <li><span class="day">Sat</span><span class="time">2:00 PM CT</span><span class="game">Community Game Night</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ MERCH ============ -->
+<section class="merch" id="merch">
+  <div class="merch-inner">
+    <h2 class="section-label">Merch</h2>
+    <p class="section-sub">All items ship via Teespring.</p>
+
+    <div class="merch-grid" id="merchGrid">
+
+      <a class="merch-card" href="https://teespring.com/YOUR_STORE/product-1" target="_blank" rel="noopener">
+        <div class="merch-thumb"></div>
+        <h3>Logo Tee</h3>
+        <p class="merch-price">$24.99</p>
+      </a>
+
+      <a class="merch-card" href="https://teespring.com/YOUR_STORE/product-2" target="_blank" rel="noopener">
+        <div class="merch-thumb"></div>
+        <h3>Studio Hoodie</h3>
+        <p class="merch-price">$44.99</p>
+      </a>
+
+      <a class="merch-card" href="https://teespring.com/YOUR_STORE/product-3" target="_blank" rel="noopener">
+        <div class="merch-thumb"></div>
+        <h3>On Air Cap</h3>
+        <p class="merch-price">$19.99</p>
+      </a>
+
+      <a class="merch-card" href="https://teespring.com/YOUR_STORE/product-4" target="_blank" rel="noopener">
+        <div class="merch-thumb"></div>
+        <h3>Mug</h3>
+        <p class="merch-price">$14.99</p>
+      </a>
+
+    </div>
+
+    <a href="https://teespring.com/stores/YOUR_STORE" class="btn btn-primary btn-wide" target="_blank" rel="noopener">View Full Store</a>
+  </div>
+</section>
+
+<!-- ============ SOCIALS / FOOTER ============ -->
+<footer class="site-footer" id="socials">
+  <div class="footer-inner">
+    <h2 class="section-label">Follow</h2>
+    <div class="social-links">
+      <a href="https://twitch.tv/YOUR_CHANNEL" target="_blank" rel="noopener">Twitch</a>
+      <a href="https://kick.com/YOUR_CHANNEL" target="_blank" rel="noopener">Kick</a>
+      <a href="https://tiktok.com/@YOUR_HANDLE" target="_blank" rel="noopener">TikTok</a>
+    </div>
+    <p class="footer-note">&copy; <span id="year"></span> TheWckdOne. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
