@@ -11,7 +11,10 @@
         content="The official home of TheWckdOne — gaming, streaming, community, and official merchandise."
     >
 
-    <!-- Fonts -->
+    <!-- =====================================================
+         FONTS
+         ===================================================== -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -20,9 +23,13 @@
         rel="stylesheet"
     >
 
-    <!-- Website Styles -->
+    <!-- =====================================================
+         STYLES
+         ===================================================== -->
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 
 <body>
 
@@ -30,47 +37,43 @@
          STORM BACKGROUND
          ===================================================== -->
 
-    <div class="storm-background" aria-hidden="true">
-
+    <div
+        class="storm-background"
+        aria-hidden="true"
+    >
         <div class="storm-clouds"></div>
-
         <div class="purple-atmosphere"></div>
 
         <div class="rain rain-layer-one"></div>
-
         <div class="rain rain-layer-two"></div>
-
         <div class="rain rain-layer-three"></div>
 
         <div class="lightning"></div>
-
     </div>
 
 
     <!-- =====================================================
-         NAVIGATION
+         HEADER / NAVIGATION
          ===================================================== -->
 
     <header class="site-header">
 
         <div class="nav-container">
 
-            <a href="#home" class="brand">
+            <!-- BRAND -->
 
-                <span class="brand-the">
-                    THE
-                </span>
-
-                <span class="brand-wckd">
-                    WCKD
-                </span>
-
-                <span class="brand-one">
-                    ONE
-                </span>
-
+            <a
+                href="#home"
+                class="brand"
+                aria-label="TheWckdOne Home"
+            >
+                <span class="brand-the">THE</span>
+                <span class="brand-wckd">WCKD</span>
+                <span class="brand-one">ONE</span>
             </a>
 
+
+            <!-- MOBILE MENU BUTTON -->
 
             <button
                 class="nav-toggle"
@@ -78,41 +81,27 @@
                 type="button"
                 aria-label="Open navigation"
                 aria-expanded="false"
+                aria-controls="navMenu"
             >
-
                 <span></span>
                 <span></span>
                 <span></span>
-
             </button>
 
 
-            <nav class="nav-menu" id="navMenu">
+            <!-- NAVIGATION -->
 
-                <a href="#home">
-                    Home
-                </a>
-
-                <a href="#about">
-                    About
-                </a>
-
-                <a href="#games">
-                    Games
-                </a>
-
-                <a href="#schedule">
-                    Schedule
-                </a>
-
-                <a href="#merch">
-                    Merch
-                </a>
-
-                <a href="#socials">
-                    Socials
-                </a>
-
+            <nav
+                class="nav-menu"
+                id="navMenu"
+                aria-label="Main navigation"
+            >
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#games">Games</a>
+                <a href="#schedule">Schedule</a>
+                <a href="#merch">Merch</a>
+                <a href="#socials">Socials</a>
             </nav>
 
         </div>
@@ -121,7 +110,7 @@
 
 
     <!-- =====================================================
-         MAIN CONTENT
+         MAIN
          ===================================================== -->
 
     <main>
@@ -131,9 +120,16 @@
              HERO
              ================================================= -->
 
-        <section class="hero" id="home">
+        <section
+            class="hero"
+            id="home"
+        >
 
-            <div class="hero-overlay"></div>
+            <div
+                class="hero-overlay"
+                aria-hidden="true"
+            ></div>
+
 
             <div class="hero-content">
 
@@ -144,30 +140,32 @@
                     class="live-status"
                     id="liveStatus"
                     data-status="offline"
+                    aria-live="polite"
                 >
-
-                    <span class="live-status-dot"></span>
+                    <span
+                        class="live-status-dot"
+                        aria-hidden="true"
+                    ></span>
 
                     <span id="liveStatusText">
                         OFFLINE
                     </span>
-
                 </div>
 
 
-                <!-- LOGO ARTWORK -->
+                <!-- HERO LOGO -->
 
                 <div class="hero-logo">
 
-                   <img
-    src="images/thewckdonelogo.png"
-    alt="TheWckdOne storm and cracked logo artwork"
->
+                    <img
+                        src="images/TheWckdOneLogo.png"
+                        alt="TheWckdOne storm and cracked logo artwork"
+                    >
 
                 </div>
 
 
-                <!-- HERO TEXT -->
+                <!-- HERO COPY -->
 
                 <div class="hero-copy">
 
@@ -175,12 +173,10 @@
                         WELCOME TO THE WCKD SIDE
                     </span>
 
-
                     <h1>
                         ENTER THE
                         <span>STORM.</span>
                     </h1>
-
 
                     <p>
                         Gaming. Streaming. Community.
@@ -203,7 +199,6 @@
                         WATCH LIVE
                     </a>
 
-
                     <a
                         href="#merch"
                         class="button button-secondary"
@@ -214,21 +209,21 @@
                 </div>
 
 
-                <!-- SCROLL INDICATOR -->
+                <!-- SCROLL -->
 
                 <a
                     href="#about"
                     class="scroll-indicator"
+                    aria-label="Scroll to About section"
                 >
+                    <span>SCROLL TO ENTER</span>
 
-                    <span>
-                        SCROLL TO ENTER
-                    </span>
-
-                    <span class="scroll-arrow">
+                    <span
+                        class="scroll-arrow"
+                        aria-hidden="true"
+                    >
                         ↓
                     </span>
-
                 </a>
 
             </div>
@@ -251,15 +246,12 @@
                     THE WCKD SIDE
                 </span>
 
-
                 <h2>
                     WELCOME TO
                     <span>THEWCKDONE</span>
                 </h2>
 
-
                 <div class="gold-divider"></div>
-
 
                 <p>
                     This is where gaming, streaming,
@@ -272,6 +264,8 @@
 
             <div class="about-grid">
 
+
+                <!-- GAMING -->
 
                 <article class="about-card">
 
@@ -294,6 +288,8 @@
                 </article>
 
 
+                <!-- STREAMING -->
+
                 <article class="about-card">
 
                     <span class="card-number">
@@ -315,6 +311,8 @@
                 </article>
 
 
+                <!-- COMMUNITY -->
+
                 <article class="about-card">
 
                     <span class="card-number">
@@ -333,7 +331,6 @@
                     </p>
 
                 </article>
-
 
             </div>
 
@@ -355,15 +352,12 @@
                     THE GAME VAULT
                 </span>
 
-
                 <h2>
                     WHAT'S
                     <span>PLAYING?</span>
                 </h2>
 
-
                 <div class="gold-divider"></div>
-
 
                 <p>
                     TheWckdOne plays a wide variety of games.
@@ -377,20 +371,20 @@
 
                 <div class="game-placeholder">
 
-                    <div class="game-symbol">
+                    <div
+                        class="game-symbol"
+                        aria-hidden="true"
+                    >
                         W
                     </div>
-
 
                     <h3>
                         GAME LIBRARY
                     </h3>
 
-
                     <p>
                         Games coming soon.
                     </p>
-
 
                     <span>
                         THE STORM IS JUST GETTING STARTED
@@ -418,15 +412,12 @@
                     CATCH THE STORM
                 </span>
 
-
                 <h2>
                     STREAM
                     <span>SCHEDULE</span>
                 </h2>
 
-
                 <div class="gold-divider"></div>
-
 
                 <p>
                     The official streaming schedule
@@ -439,17 +430,17 @@
             <div class="schedule-grid">
 
 
+                <!-- SCHEDULE 1 -->
+
                 <article class="schedule-card">
 
                     <span class="schedule-day">
                         DAY
                     </span>
 
-
                     <h3>
                         STREAM
                     </h3>
-
 
                     <p>
                         Schedule coming soon
@@ -458,17 +449,17 @@
                 </article>
 
 
+                <!-- SCHEDULE 2 -->
+
                 <article class="schedule-card">
 
                     <span class="schedule-day">
                         DAY
                     </span>
 
-
                     <h3>
                         STREAM
                     </h3>
-
 
                     <p>
                         Schedule coming soon
@@ -477,24 +468,23 @@
                 </article>
 
 
+                <!-- SCHEDULE 3 -->
+
                 <article class="schedule-card">
 
                     <span class="schedule-day">
                         DAY
                     </span>
 
-
                     <h3>
                         STREAM
                     </h3>
-
 
                     <p>
                         Schedule coming soon
                     </p>
 
                 </article>
-
 
             </div>
 
@@ -516,15 +506,12 @@
                     OFFICIAL MERCHANDISE
                 </span>
 
-
                 <h2>
                     REP THE
                     <span>WCKD SIDE</span>
                 </h2>
 
-
                 <div class="gold-divider"></div>
-
 
                 <p>
                     Official TheWckdOne merchandise.
@@ -536,29 +523,23 @@
             <div class="merch-container">
 
 
+                <!-- MERCH COPY -->
+
                 <div class="merch-copy">
 
                     <span class="merch-label">
                         THEWCKDONE
                     </span>
 
-
                     <h3>
                         WEAR THE
                         <span>STORM.</span>
                     </h3>
 
-
                     <p>
                         Official merchandise for everyone
                         who stands on the Wckd Side.
                     </p>
-
-
-                    <!--
-                        Replace # with the real
-                        Teespring store URL.
-                    -->
 
                     <a
                         href="#"
@@ -571,11 +552,19 @@
                 </div>
 
 
+                <!-- MERCH ART -->
+
                 <div class="merch-art">
 
-                    <div class="merch-light"></div>
+                    <div
+                        class="merch-light"
+                        aria-hidden="true"
+                    ></div>
 
-                    <div class="merch-w">
+                    <div
+                        class="merch-w"
+                        aria-hidden="true"
+                    >
                         W
                     </div>
 
@@ -605,15 +594,12 @@
                     JOIN THE COMMUNITY
                 </span>
 
-
                 <h2>
                     FIND
                     <span>THEWCKDONE</span>
                 </h2>
 
-
                 <div class="gold-divider"></div>
-
 
                 <p>
                     Follow TheWckdOne across the web
@@ -623,113 +609,189 @@
             </div>
 
 
-     <div class="social-grid">
-
-    <!-- TWITCH -->
-    <a
-        href="#"
-        class="social-card"
-        data-coming-soon="true"
-        aria-label="TheWckdOne on Twitch"
-    >
-        <span class="social-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" role="img">
-                <path
-                    d="M4 2h18v13l-5 5h-4l-3 3v-3H4V2zm3 3v12h4v2l2-2h4l2-2V5H7zm3 2h2v6h-2V7zm5 0h2v6h-2V7z"
-                />
-            </svg>
-        </span>
-
-        <strong>TWITCH</strong>
-
-        <small>LINK COMING SOON</small>
-    </a>
+            <div class="social-grid">
 
 
-    <!-- KICK -->
-    <a
-        href="#"
-        class="social-card"
-        data-coming-soon="true"
-        aria-label="TheWckdOne on Kick"
-    >
-        <span class="social-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" role="img">
-                <path
-                    d="M3 3h7v5h2V3h9v7h-4v4h4v7h-9v-5h-2v5H3V3zm7 8v2h4v-2h-4z"
-                />
-            </svg>
-        </span>
+                <!-- =================================================
+                     TWITCH
+                     ================================================= -->
 
-        <strong>KICK</strong>
+                <a
+                    href="#"
+                    class="social-card"
+                    data-coming-soon="true"
+                    aria-label="TheWckdOne on Twitch"
+                >
 
-        <small>LINK COMING SOON</small>
-    </a>
+                    <span
+                        class="social-icon"
+                        aria-hidden="true"
+                    >
+                        <svg
+                            viewBox="0 0 24 24"
+                            role="img"
+                        >
+                            <path
+                                d="M4 2h18v13l-5 5h-4l-3 3v-3H4V2zm3 3v12h4v2l2-2h4l2-2V5H7zm3 2h2v6h-2V7zm5 0h2v6h-2V7z"
+                            />
+                        </svg>
+                    </span>
 
+                    <strong>
+                        TWITCH
+                    </strong>
 
-    <!-- YOUTUBE -->
-    <a
-        href="#"
-        class="social-card"
-        data-coming-soon="true"
-        aria-label="TheWckdOne on YouTube"
-    >
-        <span class="social-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" role="img">
-                <path
-                    d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.5v-7l6.3 3.5-6.3 3.5z"
-                />
-            </svg>
-        </span>
+                    <small>
+                        LINK COMING SOON
+                    </small>
 
-        <strong>YOUTUBE</strong>
-
-        <small>LINK COMING SOON</small>
-    </a>
+                </a>
 
 
-    <!-- TIKTOK -->
-    <a
-        href="#"
-        class="social-card"
-        data-coming-soon="true"
-        aria-label="TheWckdOne on TikTok"
-    >
-        <span class="social-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" role="img">
-                <path
-                    d="M16.5 2h3.1c.3 1.7 1.3 3.1 2.9 4v3.2c-1.6-.1-3.1-.6-4.4-1.5v7.1c0 5-3.4 7.2-7 7.2-3.4 0-6.1-2.2-6.1-5.7 0-3.8 3.1-6.2 6.8-6.2.4 0 .8 0 1.2.1v3.3c-.4-.1-.8-.2-1.2-.2-1.7 0-3.4 1-3.4 2.9 0 1.5 1.1 2.5 2.7 2.5 1.7 0 3.4-1 3.4-3.5V2z"
-                />
-            </svg>
-        </span>
+                <!-- =================================================
+                     KICK
+                     ================================================= -->
 
-        <strong>TIKTOK</strong>
+                <a
+                    href="#"
+                    class="social-card"
+                    data-coming-soon="true"
+                    aria-label="TheWckdOne on Kick"
+                >
 
-        <small>LINK COMING SOON</small>
-    </a>
+                    <span
+                        class="social-icon"
+                        aria-hidden="true"
+                    >
+                        <svg
+                            viewBox="0 0 24 24"
+                            role="img"
+                        >
+                            <path
+                                d="M3 3h7v5h2V3h9v7h-4v4h4v7h-9v-5h-2v5H3V3zm7 8v2h4v-2h-4z"
+                            />
+                        </svg>
+                    </span>
+
+                    <strong>
+                        KICK
+                    </strong>
+
+                    <small>
+                        LINK COMING SOON
+                    </small>
+
+                </a>
 
 
-    <!-- DISCORD -->
-    <a
-        href="#"
-        class="social-card"
-        data-coming-soon="true"
-        aria-label="TheWckdOne on Discord"
-    >
-        <span class="social-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" role="img">
-                <path
-                    d="M19.5 5.2A16.5 16.5 0 0 0 15.6 4l-.5 1a14.7 14.7 0 0 0-6.2 0l-.5-1a16.5 16.5 0 0 0-3.9 1.2C2 8.8 1.3 12.3 1.6 15.8a16.6 16.6 0 0 0 4.8 2.4l1.2-1.6a10 10 0 0 1-1.9-.9l.5-.4c3.7 1.7 7.8 1.7 11.5 0l.5.4c-.6.3-1.2.6-1.9.9l1.2 1.6a16.6 16.6 0 0 0 4.8-2.4c.4-4.1-.7-7.5-2.8-10.6zM8.7 14.1c-1.1 0-2-1-2-2.2s.9-2.2 2-2.2 2 1 2 2.2-.9 2.2-2 2.2zm6.6 0c-1.1 0-2-1-2-2.2s.9-2.2 2-2.2 2 1 2 2.2-.9 2.2-2 2.2z"
-                />
-            </svg>
-        </span>
+                <!-- =================================================
+                     YOUTUBE
+                     ================================================= -->
 
-        <strong>DISCORD</strong>
+                <a
+                    href="#"
+                    class="social-card"
+                    data-coming-soon="true"
+                    aria-label="TheWckdOne on YouTube"
+                >
 
-        <small>LINK COMING SOON</small>
-    </a>
+                    <span
+                        class="social-icon"
+                        aria-hidden="true"
+                    >
+                        <svg
+                            viewBox="0 0 24 24"
+                            role="img"
+                        >
+                            <path
+                                d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.5v-7l6.3 3.5-6.3 3.5z"
+                            />
+                        </svg>
+                    </span>
 
-</div>      
+                    <strong>
+                        YOUTUBE
+                    </strong>
+
+                    <small>
+                        LINK COMING SOON
+                    </small>
+
+                </a>
+
+
+                <!-- =================================================
+                     TIKTOK
+                     ================================================= -->
+
+                <a
+                    href="#"
+                    class="social-card"
+                    data-coming-soon="true"
+                    aria-label="TheWckdOne on TikTok"
+                >
+
+                    <span
+                        class="social-icon"
+                        aria-hidden="true"
+                    >
+                        <svg
+                            viewBox="0 0 24 24"
+                            role="img"
+                        >
+                            <path
+                                d="M16.5 2h3.1c.3 1.7 1.3 3.1 2.9 4v3.2c-1.6-.1-3.1-.6-4.4-1.5v7.1c0 5-3.4 7.2-7 7.2-3.4 0-6.1-2.2-6.1-5.7 0-3.8 3.1-6.2 6.8-6.2.4 0 .8 0 1.2.1v3.3c-.4-.1-.8-.2-1.2-.2-1.7 0-3.4 1-3.4 2.9 0 1.5 1.1 2.5 2.7 2.5 1.7 0 3.4-1 3.4-3.5V2z"
+                            />
+                        </svg>
+                    </span>
+
+                    <strong>
+                        TIKTOK
+                    </strong>
+
+                    <small>
+                        LINK COMING SOON
+                    </small>
+
+                </a>
+
+
+                <!-- =================================================
+                     DISCORD
+                     ================================================= -->
+
+                <a
+                    href="#"
+                    class="social-card"
+                    data-coming-soon="true"
+                    aria-label="TheWckdOne on Discord"
+                >
+
+                    <span
+                        class="social-icon"
+                        aria-hidden="true"
+                    >
+                        <svg
+                            viewBox="0 0 24 24"
+                            role="img"
+                        >
+                            <path
+                                d="M19.5 5.2A16.5 16.5 0 0 0 15.6 4l-.5 1a14.7 14.7 0 0 0-6.2 0l-.5-1a16.5 16.5 0 0 0-3.9 1.2C2 8.8 1.3 12.3 1.6 15.8a16.6 16.6 0 0 0 4.8 2.4l1.2-1.6a10 10 0 0 1-1.9-.9l.5-.4c3.7 1.7 7.8 1.7 11.5 0l.5.4c-.6.3-1.2.6-1.9.9l1.2 1.6a16.6 16.6 0 0 0 4.8-2.4c.4-4.1-.7-7.5-2.8-10.6zM8.7 14.1c-1.1 0-2-1-2-2.2s.9-2.2 2-2.2 2 1 2 2.2-.9 2.2-2 2.2zm6.6 0c-1.1 0-2-1-2-2.2s.9-2.2 2-2.2 2 1 2 2.2-.9 2.2-2 2.2z"
+                            />
+                        </svg>
+                    </span>
+
+                    <strong>
+                        DISCORD
+                    </strong>
+
+                    <small>
+                        LINK COMING SOON
+                    </small>
+
+                </a>
+
+            </div>
 
         </section>
 
@@ -743,7 +805,6 @@
     <footer class="site-footer">
 
         <div class="footer-content">
-
 
             <div class="footer-brand">
 
