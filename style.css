@@ -1,50 +1,11 @@
 /* ============================================================
-   THEWCKDONE
-   STORMFORGED GAMING WEBSITE
+   THEWCKDONE — STORMFORGED GAMING WEBSITE
+   CLEAN MASTER STYLESHEET
    ============================================================ */
 
 
 /* ============================================================
-   RESET
-   ============================================================ */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 90px;
-}
-
-body {
-    min-height: 100vh;
-    background: #030205;
-    color: #f4f1f7;
-    font-family: "Inter", sans-serif;
-    overflow-x: hidden;
-}
-
-img {
-    display: block;
-    max-width: 100%;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-button,
-a {
-    -webkit-tap-highlight-color: transparent;
-}
-
-
-/* ============================================================
-   GLOBAL COLORS
+   1. ROOT / RESET
    ============================================================ */
 
 :root {
@@ -63,30 +24,112 @@ a {
 
     --white: #f7f5fa;
     --gray: #a7a1ad;
+    --gray-dark: #706a76;
 
-    --border: rgba(212, 175, 55, 0.24);
+    --border: rgba(212, 175, 55, 0.18);
+    --border-strong: rgba(212, 175, 55, 0.35);
 
     --max-width: 1250px;
+    --header-height: 78px;
 
     --transition-fast: 0.2s ease;
     --transition: 0.35s ease;
+    --transition-slow: 0.6s ease;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--header-height);
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    background: var(--black);
+    color: var(--white);
+
+    font-family: "Inter", Arial, sans-serif;
+    line-height: 1.5;
+
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button {
+    font: inherit;
+}
+
+::selection {
+    color: #08050b;
+    background: var(--gold);
 }
 
 
 /* ============================================================
-   STORM BACKGROUND
+   2. ACCESSIBILITY
+   ============================================================ */
+
+:focus-visible {
+    outline: 2px solid var(--gold-light);
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+/* ============================================================
+   3. STORM BACKGROUND
    ============================================================ */
 
 .storm-background {
     position: fixed;
     inset: 0;
     z-index: -10;
+
     overflow: hidden;
     pointer-events: none;
+
     background:
         radial-gradient(
             ellipse at 50% 20%,
-            rgba(93, 0, 160, 0.2),
+            rgba(93, 0, 160, 0.20),
             transparent 45%
         ),
         linear-gradient(
@@ -98,11 +141,12 @@ a {
 }
 
 
-/* Cloud atmosphere */
+/* Clouds */
 
 .storm-clouds {
     position: absolute;
     inset: -20%;
+
     opacity: 0.65;
 
     background:
@@ -124,7 +168,8 @@ a {
 
     filter: blur(55px);
 
-    animation: cloudsMove 20s ease-in-out infinite alternate;
+    animation:
+        cloudsMove 20s ease-in-out infinite alternate;
 }
 
 @keyframes cloudsMove {
@@ -142,14 +187,16 @@ a {
 }
 
 
-/* Purple atmospheric glow */
+/* Purple atmosphere */
 
 .purple-atmosphere {
     position: absolute;
+
     width: 80vw;
     height: 60vw;
-    left: 10%;
+
     top: 5%;
+    left: 10%;
 
     background:
         radial-gradient(
@@ -161,7 +208,8 @@ a {
 
     filter: blur(45px);
 
-    animation: purplePulse 7s ease-in-out infinite alternate;
+    animation:
+        purplePulse 7s ease-in-out infinite alternate;
 }
 
 @keyframes purplePulse {
@@ -171,21 +219,24 @@ a {
     }
 
     to {
-        opacity: 0.9;
+        opacity: 0.90;
         transform: scale(1.05);
     }
 }
 
 
 /* ============================================================
-   RAIN
+   4. RAIN
    ============================================================ */
 
 .rain {
     position: absolute;
     inset: -50%;
+
     width: 200%;
     height: 200%;
+
+    transform: rotate(-5deg);
 
     background-image:
         repeating-linear-gradient(
@@ -197,45 +248,53 @@ a {
             transparent 28px
         );
 
-    transform: rotate(-5deg);
+    will-change: transform;
 }
 
 .rain-layer-one {
     opacity: 0.55;
+
     background-size: 25px 70px;
+
     animation: rainFall 0.8s linear infinite;
 }
 
 .rain-layer-two {
     opacity: 0.25;
+
     background-size: 45px 100px;
+
     animation: rainFall 1.35s linear infinite;
 }
 
 .rain-layer-three {
     opacity: 0.12;
+
     background-size: 70px 150px;
+
     animation: rainFall 2s linear infinite;
 }
 
 @keyframes rainFall {
     from {
-        transform: translateY(-5%) rotate(-5deg);
+        transform: translate3d(0, -5%, 0) rotate(-5deg);
     }
 
     to {
-        transform: translateY(5%) rotate(-5deg);
+        transform: translate3d(0, 5%, 0) rotate(-5deg);
     }
 }
 
 
 /* ============================================================
-   LIGHTNING
+   5. LIGHTNING
    ============================================================ */
 
 .lightning {
     position: absolute;
     inset: 0;
+
+    opacity: 0;
 
     background:
         radial-gradient(
@@ -244,13 +303,10 @@ a {
             transparent 25%
         );
 
-    opacity: 0;
-
     animation: lightningFlash 9s infinite;
 }
 
 @keyframes lightningFlash {
-
     0%,
     88%,
     92%,
@@ -273,15 +329,16 @@ a {
 
 
 /* ============================================================
-   HEADER
+   6. HEADER / NAVIGATION
    ============================================================ */
 
 .site-header {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
     z-index: 100;
+
+    width: 100%;
 
     background:
         linear-gradient(
@@ -290,7 +347,8 @@ a {
             rgba(3, 2, 5, 0.68)
         );
 
-    border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+    border-bottom:
+        1px solid rgba(212, 175, 55, 0.12);
 
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
@@ -302,7 +360,8 @@ a {
         var(--max-width)
     );
 
-    min-height: 78px;
+    min-height: var(--header-height);
+
     margin: 0 auto;
 
     display: flex;
@@ -316,10 +375,12 @@ a {
 .brand {
     display: inline-flex;
     align-items: baseline;
+
     gap: 2px;
 
     font-family: "Anton", sans-serif;
     font-size: 1.5rem;
+
     letter-spacing: 0.06em;
 
     transition: var(--transition);
@@ -335,18 +396,20 @@ a {
 
 .brand-wckd {
     color: var(--purple-bright);
+
     text-shadow:
         0 0 15px rgba(157, 50, 255, 0.55);
 }
 
 .brand-one {
     color: var(--gold);
+
     text-shadow:
         0 0 12px rgba(212, 175, 55, 0.35);
 }
 
 
-/* Navigation */
+/* Desktop navigation */
 
 .nav-menu {
     display: flex;
@@ -361,6 +424,7 @@ a {
 
     font-size: 0.76rem;
     font-weight: 700;
+
     letter-spacing: 0.12em;
     text-transform: uppercase;
 
@@ -394,7 +458,7 @@ a {
 }
 
 
-/* Mobile navigation button */
+/* Mobile toggle */
 
 .nav-toggle {
     display: none;
@@ -404,10 +468,13 @@ a {
 
     padding: 8px;
 
-    border: 1px solid rgba(212, 175, 55, 0.3);
+    border:
+        1px solid rgba(212, 175, 55, 0.30);
+
     border-radius: 6px;
 
-    background: rgba(20, 5, 30, 0.8);
+    background:
+        rgba(20, 5, 30, 0.80);
 
     cursor: pointer;
 }
@@ -427,7 +494,7 @@ a {
 
 
 /* ============================================================
-   HERO
+   7. HERO
    ============================================================ */
 
 .hero {
@@ -453,26 +520,20 @@ a {
         );
 }
 
-
-/* Dark overlay over artwork */
-
 .hero-overlay {
     position: absolute;
     inset: 0;
 
+    pointer-events: none;
+
     background:
         linear-gradient(
             180deg,
-            rgba(3, 2, 5, 0.5),
+            rgba(3, 2, 5, 0.50),
             rgba(3, 2, 5, 0.08) 35%,
-            rgba(3, 2, 5, 0.6) 100%
+            rgba(3, 2, 5, 0.60) 100%
         );
-
-    pointer-events: none;
 }
-
-
-/* Hero content */
 
 .hero-content {
     position: relative;
@@ -489,26 +550,31 @@ a {
 
 
 /* ============================================================
-   LIVE STATUS
+   8. LIVE STATUS
    ============================================================ */
 
 .live-status {
     display: inline-flex;
     align-items: center;
+
     gap: 10px;
 
     margin-bottom: 15px;
     padding: 8px 16px;
 
-    border: 1px solid rgba(212, 175, 55, 0.25);
+    border:
+        1px solid rgba(212, 175, 55, 0.25);
+
     border-radius: 999px;
 
-    background: rgba(5, 3, 9, 0.7);
+    background:
+        rgba(5, 3, 9, 0.70);
 
     color: #c6c1cb;
 
     font-size: 0.68rem;
     font-weight: 800;
+
     letter-spacing: 0.16em;
 
     backdrop-filter: blur(10px);
@@ -518,18 +584,21 @@ a {
     width: 8px;
     height: 8px;
 
+    flex: 0 0 auto;
+
     border-radius: 50%;
 
     background: #777;
 
-    box-shadow: 0 0 7px rgba(255, 255, 255, 0.15);
+    box-shadow:
+        0 0 7px rgba(255, 255, 255, 0.15);
 }
 
 .live-status[data-status="online"] .live-status-dot {
     background: #8cff9b;
 
     box-shadow:
-        0 0 10px rgba(140, 255, 155, 0.8);
+        0 0 10px rgba(140, 255, 155, 0.80);
 
     animation: livePulse 1.5s infinite;
 }
@@ -543,28 +612,27 @@ a {
 
 
 /* ============================================================
-   HERO LOGO
+   9. HERO LOGO
    ============================================================ */
 
 .hero-logo {
     position: relative;
 
-    width: min(
-        820px,
-        90vw
-    );
+    width: min(820px, 90vw);
 
-    margin: 0 auto 5px;
+    margin:
+        0 auto 5px;
 
     filter:
         drop-shadow(
-            0 25px 40px rgba(0, 0, 0, 0.7)
+            0 25px 40px rgba(0, 0, 0, 0.70)
         )
         drop-shadow(
             0 0 35px rgba(101, 0, 180, 0.25)
         );
 
-    animation: logoFloat 7s ease-in-out infinite;
+    animation:
+        logoFloat 7s ease-in-out infinite;
 }
 
 .hero-logo img {
@@ -587,7 +655,7 @@ a {
 
 
 /* ============================================================
-   HERO TEXT
+   10. HERO TEXT
    ============================================================ */
 
 .hero-copy {
@@ -601,21 +669,19 @@ a {
 
     font-size: 0.72rem;
     font-weight: 800;
+
     letter-spacing: 0.28em;
     text-transform: uppercase;
 
     text-shadow:
-        0 0 12px rgba(212, 175, 55, 0.3);
+        0 0 12px rgba(212, 175, 55, 0.30);
 }
 
 .hero-copy h1 {
     font-family: "Anton", sans-serif;
 
-    font-size: clamp(
-        3rem,
-        8vw,
-        6.8rem
-    );
+    font-size:
+        clamp(3rem, 8vw, 6.8rem);
 
     line-height: 0.95;
 
@@ -625,17 +691,19 @@ a {
     color: var(--white);
 
     text-shadow:
-        0 5px 30px rgba(0, 0, 0, 0.7);
+        0 5px 30px rgba(0, 0, 0, 0.70);
 }
 
 .hero-copy h1 span {
     color: var(--purple-bright);
 
     text-shadow:
-        0 0 25px rgba(157, 50, 255, 0.6);
+        0 0 25px rgba(157, 50, 255, 0.60);
 }
 
 .hero-copy p {
+    max-width: 720px;
+
     margin-top: 20px;
 
     color: #d0cbd4;
@@ -646,7 +714,7 @@ a {
 
 
 /* ============================================================
-   HERO BUTTONS
+   11. BUTTONS
    ============================================================ */
 
 .hero-buttons {
@@ -671,15 +739,19 @@ a {
 
     font-size: 0.72rem;
     font-weight: 900;
+
     letter-spacing: 0.13em;
     text-transform: uppercase;
 
     overflow: hidden;
 
+    cursor: pointer;
+
     transition:
         transform var(--transition),
         box-shadow var(--transition),
-        background var(--transition);
+        background var(--transition),
+        border-color var(--transition);
 }
 
 .button:hover {
@@ -714,7 +786,8 @@ a {
 .button-secondary {
     color: var(--white);
 
-    border: 1px solid rgba(212, 175, 55, 0.55);
+    border:
+        1px solid rgba(212, 175, 55, 0.55);
 
     background:
         rgba(15, 6, 23, 0.75);
@@ -724,18 +797,21 @@ a {
 
 .button-secondary:hover {
     border-color: var(--gold);
-    background: rgba(79, 0, 125, 0.35);
+
+    background:
+        rgba(79, 0, 125, 0.35);
 }
 
 
 /* ============================================================
-   SCROLL INDICATOR
+   12. SCROLL INDICATOR
    ============================================================ */
 
 .scroll-indicator {
     display: flex;
     flex-direction: column;
     align-items: center;
+
     gap: 7px;
 
     margin-top: 48px;
@@ -744,7 +820,8 @@ a {
 
     font-size: 0.58rem;
     font-weight: 800;
-    letter-spacing: 0.2em;
+
+    letter-spacing: 0.20em;
 
     transition: var(--transition);
 }
@@ -758,7 +835,8 @@ a {
 
     font-size: 1.25rem;
 
-    animation: scrollBounce 1.7s infinite;
+    animation:
+        scrollBounce 1.7s infinite;
 }
 
 @keyframes scrollBounce {
@@ -774,7 +852,7 @@ a {
 
 
 /* ============================================================
-   GENERAL SECTIONS
+   13. GENERAL SECTIONS
    ============================================================ */
 
 .section {
@@ -791,15 +869,11 @@ a {
         130px 0;
 }
 
-
-/* Section heading */
-
 .section-heading {
     max-width: 780px;
 
     margin:
-        0 auto
-        70px;
+        0 auto 70px;
 
     text-align: center;
 }
@@ -813,6 +887,7 @@ a {
 
     font-size: 0.68rem;
     font-weight: 900;
+
     letter-spacing: 0.25em;
     text-transform: uppercase;
 }
@@ -820,11 +895,8 @@ a {
 .section-heading h2 {
     font-family: "Anton", sans-serif;
 
-    font-size: clamp(
-        2.5rem,
-        5vw,
-        4.6rem
-    );
+    font-size:
+        clamp(2.5rem, 5vw, 4.6rem);
 
     line-height: 1;
 
@@ -835,7 +907,7 @@ a {
     color: var(--purple-bright);
 
     text-shadow:
-        0 0 22px rgba(157, 50, 255, 0.4);
+        0 0 22px rgba(157, 50, 255, 0.40);
 }
 
 .section-heading p {
@@ -863,12 +935,12 @@ a {
         );
 
     box-shadow:
-        0 0 10px rgba(212, 175, 55, 0.3);
+        0 0 10px rgba(212, 175, 55, 0.30);
 }
 
 
 /* ============================================================
-   ABOUT
+   14. ABOUT
    ============================================================ */
 
 .about-section {
@@ -888,9 +960,11 @@ a {
 .about-card {
     position: relative;
 
+    min-height: 270px;
+
     padding: 38px 32px;
 
-    min-height: 270px;
+    overflow: hidden;
 
     border:
         1px solid rgba(212, 175, 55, 0.14);
@@ -902,9 +976,10 @@ a {
             rgba(7, 4, 11, 0.86)
         );
 
-    overflow: hidden;
-
-    transition: var(--transition);
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
 }
 
 .about-card::before {
@@ -912,8 +987,8 @@ a {
 
     position: absolute;
 
-    left: 0;
     top: 0;
+    left: 0;
 
     width: 100%;
     height: 2px;
@@ -939,7 +1014,7 @@ a {
         rgba(212, 175, 55, 0.35);
 
     box-shadow:
-        0 20px 50px rgba(0, 0, 0, 0.4),
+        0 20px 50px rgba(0, 0, 0, 0.40),
         0 0 35px rgba(100, 0, 160, 0.12);
 }
 
@@ -951,7 +1026,6 @@ a {
     color: var(--gold);
 
     font-family: "Anton", sans-serif;
-
     font-size: 2.8rem;
 
     opacity: 0.28;
@@ -985,15 +1059,18 @@ a {
 
 
 /* ============================================================
-   GAMES
+   15. GAMES
    ============================================================ */
 
 .games-section {
-    max-width: none;
     width: 100%;
+    max-width: none;
 
-    padding-left: max(20px, calc((100vw - var(--max-width)) / 2));
-    padding-right: max(20px, calc((100vw - var(--max-width)) / 2));
+    padding-left:
+        max(20px, calc((100vw - var(--max-width)) / 2));
+
+    padding-right:
+        max(20px, calc((100vw - var(--max-width)) / 2));
 }
 
 .game-vault {
@@ -1017,7 +1094,7 @@ a {
         radial-gradient(
             circle at center,
             rgba(95, 0, 160, 0.15),
-            rgba(8, 4, 12, 0.9) 65%
+            rgba(8, 4, 12, 0.90) 65%
         );
 
     box-shadow:
@@ -1028,23 +1105,23 @@ a {
     width: 90px;
     height: 90px;
 
-    margin: 0 auto 25px;
+    margin:
+        0 auto 25px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
     border:
-        1px solid rgba(212, 175, 55, 0.5);
+        1px solid rgba(212, 175, 55, 0.50);
 
     color: var(--gold);
 
     font-family: "Anton", sans-serif;
-
     font-size: 3rem;
 
     box-shadow:
-        0 0 35px rgba(212, 175, 55, 0.1);
+        0 0 35px rgba(212, 175, 55, 0.10);
 }
 
 .game-placeholder h3 {
@@ -1068,12 +1145,13 @@ a {
 
     font-size: 0.62rem;
     font-weight: 800;
-    letter-spacing: 0.2em;
+
+    letter-spacing: 0.20em;
 }
 
 
 /* ============================================================
-   SCHEDULE
+   16. SCHEDULE
    ============================================================ */
 
 .schedule-section {
@@ -1101,14 +1179,17 @@ a {
 
     text-align: center;
 
-    transition: var(--transition);
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        background var(--transition);
 }
 
 .schedule-card:hover {
     transform: translateY(-5px);
 
     border-color:
-        rgba(212, 175, 55, 0.4);
+        rgba(212, 175, 55, 0.40);
 
     background:
         rgba(38, 0, 68, 0.35);
@@ -1123,7 +1204,8 @@ a {
 
     font-size: 0.65rem;
     font-weight: 900;
-    letter-spacing: 0.2em;
+
+    letter-spacing: 0.20em;
 }
 
 .schedule-card h3 {
@@ -1142,24 +1224,28 @@ a {
 
 
 /* ============================================================
-   MERCH
+   17. MERCH
    ============================================================ */
 
 .merch-section {
-    max-width: none;
     width: 100%;
+    max-width: none;
 
-    padding-left: max(20px, calc((100vw - var(--max-width)) / 2));
-    padding-right: max(20px, calc((100vw - var(--max-width)) / 2));
+    padding-left:
+        max(20px, calc((100vw - var(--max-width)) / 2));
+
+    padding-right:
+        max(20px, calc((100vw - var(--max-width)) / 2));
 }
 
 .merch-container {
     display: grid;
 
-    grid-template-columns:
-        1fr 1fr;
+    grid-template-columns: 1fr 1fr;
 
     min-height: 480px;
+
+    overflow: hidden;
 
     border:
         1px solid rgba(212, 175, 55, 0.18);
@@ -1168,10 +1254,8 @@ a {
         linear-gradient(
             135deg,
             rgba(35, 8, 50, 0.82),
-            rgba(5, 3, 8, 0.9)
+            rgba(5, 3, 8, 0.90)
         );
-
-    overflow: hidden;
 }
 
 .merch-copy {
@@ -1187,7 +1271,8 @@ a {
 
     font-size: 0.65rem;
     font-weight: 900;
-    letter-spacing: 0.2em;
+
+    letter-spacing: 0.20em;
 }
 
 .merch-copy h3 {
@@ -1195,11 +1280,8 @@ a {
 
     font-family: "Anton", sans-serif;
 
-    font-size: clamp(
-        3rem,
-        5vw,
-        5.5rem
-    );
+    font-size:
+        clamp(3rem, 5vw, 5.5rem);
 
     line-height: 0.95;
 }
@@ -1211,7 +1293,8 @@ a {
 .merch-copy p {
     max-width: 450px;
 
-    margin: 22px 0 30px;
+    margin:
+        22px 0 30px;
 
     color: var(--gray);
 
@@ -1219,21 +1302,23 @@ a {
 }
 
 
-/* Merch visual */
+/* Merch artwork */
 
 .merch-art {
     position: relative;
+
+    min-height: 420px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    min-height: 420px;
+    overflow: hidden;
 
     background:
         radial-gradient(
             circle,
-            rgba(108, 0, 190, 0.3),
+            rgba(108, 0, 190, 0.30),
             transparent 55%
         );
 }
@@ -1255,18 +1340,19 @@ a {
 
     filter: blur(20px);
 
-    animation: merchPulse 5s ease-in-out infinite alternate;
+    animation:
+        merchPulse 5s ease-in-out infinite alternate;
 }
 
 @keyframes merchPulse {
     from {
-        transform: scale(0.9);
-        opacity: 0.5;
+        transform: scale(0.90);
+        opacity: 0.50;
     }
 
     to {
-        transform: scale(1.1);
-        opacity: 0.9;
+        transform: scale(1.10);
+        opacity: 0.90;
     }
 }
 
@@ -1284,7 +1370,7 @@ a {
         2px var(--gold);
 
     text-shadow:
-        0 0 40px rgba(212, 175, 55, 0.3);
+        0 0 40px rgba(212, 175, 55, 0.30);
 }
 
 .merch-text {
@@ -1298,12 +1384,12 @@ a {
 
     font-size: 1rem;
 
-    letter-spacing: 0.3em;
+    letter-spacing: 0.30em;
 }
 
 
 /* ============================================================
-   SOCIALS
+   18. SOCIALS
    ============================================================ */
 
 .social-grid {
@@ -1333,17 +1419,20 @@ a {
     background:
         rgba(10, 5, 15, 0.75);
 
-    transition: var(--transition);
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
 }
 
 .social-card:hover {
     transform: translateY(-7px);
 
     border-color:
-        rgba(157, 50, 255, 0.6);
+        rgba(157, 50, 255, 0.60);
 
     box-shadow:
-        0 15px 35px rgba(68, 0, 110, 0.2);
+        0 15px 35px rgba(68, 0, 110, 0.20);
 }
 
 .social-icon {
@@ -1363,7 +1452,10 @@ a {
 
     font-size: 1.1rem;
 
-    transition: var(--transition);
+    transition:
+        color var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
 }
 
 .social-card:hover .social-icon {
@@ -1373,7 +1465,7 @@ a {
         var(--purple-bright);
 
     box-shadow:
-        0 0 20px rgba(157, 50, 255, 0.2);
+        0 0 20px rgba(157, 50, 255, 0.20);
 }
 
 .social-card strong {
@@ -1385,7 +1477,7 @@ a {
 .social-card small {
     margin-top: 7px;
 
-    color: #706a76;
+    color: var(--gray-dark);
 
     font-size: 0.55rem;
 
@@ -1394,7 +1486,7 @@ a {
 
 
 /* ============================================================
-   FOOTER
+   19. FOOTER
    ============================================================ */
 
 .site-footer {
@@ -1448,7 +1540,7 @@ a {
     font-size: 0.65rem;
     font-weight: 800;
 
-    letter-spacing: 0.2em;
+    letter-spacing: 0.20em;
 }
 
 .footer-divider {
@@ -1474,7 +1566,7 @@ a {
 
 
 /* ============================================================
-   COMING SOON STATE
+   20. COMING SOON
    ============================================================ */
 
 [data-coming-soon="true"] {
@@ -1483,18 +1575,7 @@ a {
 
 
 /* ============================================================
-   SELECTION
-   ============================================================ */
-
-::selection {
-    color: #08050b;
-
-    background: var(--gold);
-}
-
-
-/* ============================================================
-   SCROLLBAR
+   21. SCROLLBAR
    ============================================================ */
 
 ::-webkit-scrollbar {
@@ -1502,7 +1583,7 @@ a {
 }
 
 ::-webkit-scrollbar-track {
-    background: #030205;
+    background: var(--black);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -1527,7 +1608,7 @@ a {
 
 
 /* ============================================================
-   RESPONSIVE — TABLET
+   22. TABLET — 1000PX
    ============================================================ */
 
 @media (max-width: 1000px) {
@@ -1564,15 +1645,18 @@ a {
     .merch-art {
         min-height: 350px;
     }
-
 }
 
 
 /* ============================================================
-   RESPONSIVE — MOBILE
+   23. MOBILE — 700PX
    ============================================================ */
 
 @media (max-width: 700px) {
+
+    :root {
+        --header-height: 70px;
+    }
 
     html {
         scroll-padding-top: 75px;
@@ -1611,6 +1695,7 @@ a {
             rgba(7, 3, 11, 0.96);
 
         backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
 
         opacity: 0;
         visibility: hidden;
@@ -1646,7 +1731,7 @@ a {
     }
 
 
-    /* Hamburger */
+    /* Hamburger animation */
 
     .nav-toggle.active span:nth-child(1) {
         transform:
@@ -1671,13 +1756,11 @@ a {
         min-height: 100svh;
 
         padding:
-            100px 18px
-            60px;
+            100px 18px 60px;
     }
 
     .hero-logo {
         width: 100%;
-
         margin-top: 10px;
     }
 
@@ -1703,7 +1786,6 @@ a {
         width: 100%;
 
         flex-direction: column;
-
         align-items: stretch;
 
         gap: 10px;
@@ -1758,7 +1840,8 @@ a {
     }
 
     .merch-copy {
-        padding: 45px 25px;
+        padding:
+            45px 25px;
     }
 
     .merch-copy h3 {
@@ -1784,12 +1867,11 @@ a {
     .social-card {
         min-height: 155px;
     }
-
 }
 
 
 /* ============================================================
-   RESPONSIVE — SMALL PHONES
+   24. SMALL PHONES — 420PX
    ============================================================ */
 
 @media (max-width: 420px) {
@@ -1814,4 +1896,11 @@ a {
         min-height: 130px;
     }
 
+    .merch-copy h3 {
+        font-size: 3rem;
+    }
+
+    .merch-w {
+        font-size: 8rem;
+    }
 }
