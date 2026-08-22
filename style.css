@@ -1904,3 +1904,24 @@ button {
         font-size: 8rem;
     }
 }
+.social-icon svg {
+    width: 24px;
+    height: 24px;
+
+    display: block;
+
+    fill: currentColor;
+
+    transition:
+        transform var(--transition),
+        filter var(--transition);
+}
+
+.social-card:hover .social-icon svg {
+    transform: scale(1.08);
+
+    filter:
+        drop-shadow(
+            0 0 8px rgba(157, 50, 255, 0.45)
+        );
+}
