@@ -1,123 +1,660 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TheWckdOne — Live &amp; Merch</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TheWckdOne | Gaming & Streaming</title>
+
+    <meta
+        name="description"
+        content="The official home of TheWckdOne — gaming, streaming, community, and official merch."
+    >
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<div class="storm-overlay" aria-hidden="true"></div>
 
-<!-- ============ NAV ============ -->
-<header class="site-header">
-  <div class="nav-wrap">
-    <a href="#top" class="brand">TheWckd<span>One</span></a>
+    <!-- =========================================================
+         BACKGROUND ATMOSPHERE
+         ========================================================= -->
 
-    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-
-    <nav class="nav" id="siteNav">
-      <a href="#schedule">Schedule</a>
-      <a href="#merch">Merch</a>
-      <a href="#socials">Follow</a>
-    </nav>
-  </div>
-</header>
-
-<!-- ============ HERO ============ -->
-<section class="hero" id="top">
-  <div class="rain rain-1" aria-hidden="true"></div>
-  <div class="rain rain-2" aria-hidden="true"></div>
-  <div class="bolt" aria-hidden="true"></div>
-  <div class="hero-inner">
-
-    <!-- Signature element: on-air status light -->
-    <div class="onair" id="onairBadge" data-status="offline">
-      <span class="onair-dot"></span>
-      <span class="onair-text" id="onairText">OFFLINE</span>
+    <div class="storm-background" aria-hidden="true">
+        <div class="storm-clouds"></div>
+        <div class="storm-purple-glow"></div>
+        <div class="rain rain-one"></div>
+        <div class="rain rain-two"></div>
+        <div class="lightning-flash"></div>
     </div>
 
-    <h1 class="hero-title">
-      <span class="crack-line" data-text="TheWckd">TheWckd</span><br>
-      <span class="crack-line" data-text="One">One</span>
-    </h1>
-    <p class="hero-sub" id="heroSub">Next stream: <span id="nextStreamTime">Sat 7:00 PM CT</span></p>
 
-    <div class="hero-actions">
-      <a href="https://twitch.tv/TheWckdOne" class="btn btn-primary" target="_blank" rel="noopener">Watch on Twitch</a>
-      <a href="#merch" class="btn btn-ghost">Shop Merch</a>
-    </div>
-  </div>
-</section>
+    <!-- =========================================================
+         NAVIGATION
+         ========================================================= -->
 
-<!-- ============ SCHEDULE STRIP ============ -->
-<section class="schedule" id="schedule">
-  <div class="schedule-inner">
-    <h2 class="section-label">On Air</h2>
-    <ul class="schedule-list">
-      <li><span class="day">Tue</span><span class="time">7:00 PM CT</span><span class="game">Just Chatting</span></li>
-      <li><span class="day">Thu</span><span class="time">7:00 PM CT</span><span class="game">Ranked Grind</span></li>
-      <li><span class="day">Sat</span><span class="time">2:00 PM CT</span><span class="game">Community Game Night</span></li>
-    </ul>
-  </div>
-</section>
+    <header class="site-header">
 
-<!-- ============ MERCH ============ -->
-<section class="merch" id="merch">
-  <div class="merch-inner">
-    <h2 class="section-label">Merch</h2>
-    <p class="section-sub">All items ship via Teespring.</p>
+        <div class="nav-container">
 
-    <div class="merch-grid" id="merchGrid">
+            <a href="#home" class="brand">
+                <span class="brand-main">THEWCKD</span><span class="brand-accent">ONE</span>
+            </a>
 
-      <a class="merch-card" href="https://teespring.com/TheWckdOne/product-1" target="_blank" rel="noopener">
-        <div class="merch-thumb"></div>
-        <h3>Logo Tee</h3>
-        <p class="merch-price">$24.99</p>
-      </a>
+            <button
+                class="nav-toggle"
+                id="navToggle"
+                type="button"
+                aria-label="Open navigation"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
-      <a class="merch-card" href="https://teespring.com/TheWckdOne/product-2" target="_blank" rel="noopener">
-        <div class="merch-thumb"></div>
-        <h3>Studio Hoodie</h3>
-        <p class="merch-price">$44.99</p>
-      </a>
+            <nav class="nav-menu" id="navMenu">
 
-      <a class="merch-card" href="https://teespring.com/TheWckdOne/product-3" target="_blank" rel="noopener">
-        <div class="merch-thumb"></div>
-        <h3>On Air Cap</h3>
-        <p class="merch-price">$19.99</p>
-      </a>
+                <a href="#home">Home</a>
 
-      <a class="merch-card" href="https://teespring.com/TheWckdOne/product-4" target="_blank" rel="noopener">
-        <div class="merch-thumb"></div>
-        <h3>Mug</h3>
-        <p class="merch-price">$14.99</p>
-      </a>
+                <a href="#about">About</a>
 
-    </div>
+                <a href="#games">Games</a>
 
-    <a href="https://teespring.com/stores/TheWckdOne" class="btn btn-primary btn-wide" target="_blank" rel="noopener">View Full Store</a>
-  </div>
-</section>
+                <a href="#schedule">Schedule</a>
 
-<!-- ============ SOCIALS / FOOTER ============ -->
-<footer class="site-footer" id="socials">
-  <div class="footer-inner">
-    <h2 class="section-label">Follow</h2>
-    <div class="social-links">
-      <a href="https://twitch.tv/TheWckdOne" target="_blank" rel="noopener">Twitch</a>
-      <a href="https://kick.com/TheWckdOne" target="_blank" rel="noopener">Kick</a>
-      <a href="https://tiktok.com/@TheWckdOne" target="_blank" rel="noopener">TikTok</a>
-    </div>
-    <p class="footer-note">&copy; <span id="year"></span> TheWckdOne. All rights reserved.</p>
-  </div>
-</footer>
+                <a href="#merch">Merch</a>
 
-<script src="script.js"></script>
+                <a href="#socials">Socials</a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================================
+         HERO
+         ========================================================= -->
+
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="hero-atmosphere"></div>
+
+            <div class="hero-content">
+
+                <div class="status-badge" id="streamStatus">
+
+                    <span class="status-dot"></span>
+
+                    <span id="statusText">
+                        OFFLINE
+                    </span>
+
+                </div>
+
+
+                <!-- Generated TheWckdOne artwork -->
+
+                <div class="hero-logo-container">
+
+                    <img
+                        src="TheWckdOneLogo.png"
+                        class="hero-logo"
+                        alt="TheWckdOne cracked purple and gold logo"
+                    >
+
+                </div>
+
+
+                <div class="hero-text">
+
+                    <p class="hero-kicker">
+                        WELCOME TO THE WCKD SIDE
+                    </p>
+
+                    <h1>
+                        ENTER THE
+                        <span>STORM.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Gaming. Streaming. Community.
+                        <br>
+                        Welcome to TheWckdOne.
+                    </p>
+
+                </div>
+
+
+                <div class="hero-buttons">
+
+                    <!-- Replace # with his real Twitch URL -->
+                    <a
+                        href="#"
+                        class="button button-primary"
+                        data-coming-soon="true"
+                    >
+                        WATCH LIVE
+                    </a>
+
+                    <a
+                        href="#merch"
+                        class="button button-secondary"
+                    >
+                        SHOP MERCH
+                    </a>
+
+                </div>
+
+
+                <div class="scroll-prompt">
+
+                    <span>SCROLL TO EXPLORE</span>
+
+                    <span class="scroll-arrow">
+                        ↓
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             ABOUT
+             ===================================================== -->
+
+        <section class="section about-section" id="about">
+
+            <div class="section-header">
+
+                <span class="section-kicker">
+                    THE WCKD SIDE
+                </span>
+
+                <h2>
+                    WELCOME TO
+                    <span>THEWCKDONE</span>
+                </h2>
+
+                <div class="gold-divider"></div>
+
+                <p>
+                    This isn't just another gaming channel.
+                    This is where gaming, chaos, competition,
+                    and community come together.
+                </p>
+
+            </div>
+
+
+            <div class="about-grid">
+
+                <article class="about-card">
+
+                    <span class="card-number">
+                        01
+                    </span>
+
+                    <h3>
+                        GAMING
+                    </h3>
+
+                    <p>
+                        From competitive games to massive
+                        open-world adventures, there's always
+                        something new to play.
+                    </p>
+
+                </article>
+
+
+                <article class="about-card">
+
+                    <span class="card-number">
+                        02
+                    </span>
+
+                    <h3>
+                        STREAMING
+                    </h3>
+
+                    <p>
+                        Live gameplay, insane moments,
+                        challenges, laughs, and everything
+                        that happens when the cameras turn on.
+                    </p>
+
+                </article>
+
+
+                <article class="about-card">
+
+                    <span class="card-number">
+                        03
+                    </span>
+
+                    <h3>
+                        COMMUNITY
+                    </h3>
+
+                    <p>
+                        The Wckd Side isn't just about watching.
+                        It's about being part of the community.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             GAMES
+             ===================================================== -->
+
+        <section class="section games-section" id="games">
+
+            <div class="section-header">
+
+                <span class="section-kicker">
+                    THE GAME VAULT
+                </span>
+
+                <h2>
+                    WHAT'S
+                    <span>PLAYING?</span>
+                </h2>
+
+                <div class="gold-divider"></div>
+
+                <p>
+                    The games will be added here as
+                    TheWckdOne's lineup is finalized.
+                </p>
+
+            </div>
+
+
+            <div class="games-container">
+
+                <div class="game-placeholder">
+
+                    <div class="placeholder-symbol">
+                        W
+                    </div>
+
+                    <h3>
+                        GAMES COMING SOON
+                    </h3>
+
+                    <p>
+                        TheWckdOne plays a wide variety of games.
+                        Check back soon for the full game lineup.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SCHEDULE
+             ===================================================== -->
+
+        <section class="section schedule-section" id="schedule">
+
+            <div class="section-header">
+
+                <span class="section-kicker">
+                    CATCH THE STORM
+                </span>
+
+                <h2>
+                    STREAM
+                    <span>SCHEDULE</span>
+                </h2>
+
+                <div class="gold-divider"></div>
+
+            </div>
+
+
+            <div class="schedule-container">
+
+                <div class="schedule-card">
+
+                    <span class="schedule-day">
+                        DAY
+                    </span>
+
+                    <strong>
+                        STREAM TIME
+                    </strong>
+
+                    <p>
+                        Schedule coming soon
+                    </p>
+
+                </div>
+
+
+                <div class="schedule-card">
+
+                    <span class="schedule-day">
+                        DAY
+                    </span>
+
+                    <strong>
+                        STREAM TIME
+                    </strong>
+
+                    <p>
+                        Schedule coming soon
+                    </p>
+
+                </div>
+
+
+                <div class="schedule-card">
+
+                    <span class="schedule-day">
+                        DAY
+                    </span>
+
+                    <strong>
+                        STREAM TIME
+                    </strong>
+
+                    <p>
+                        Schedule coming soon
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             MERCH
+             ===================================================== -->
+
+        <section class="section merch-section" id="merch">
+
+            <div class="section-header">
+
+                <span class="section-kicker">
+                    OFFICIAL MERCHANDISE
+                </span>
+
+                <h2>
+                    REP THE
+                    <span>WCKD SIDE</span>
+                </h2>
+
+                <div class="gold-divider"></div>
+
+                <p>
+                    Official TheWckdOne merchandise.
+                </p>
+
+            </div>
+
+
+            <div class="merch-showcase">
+
+                <div class="merch-content">
+
+                    <span class="merch-label">
+                        THEWCKDONE
+                    </span>
+
+                    <h3>
+                        WEAR THE
+                        <span>STORM.</span>
+                    </h3>
+
+                    <p>
+                        Rock official TheWckdOne gear
+                        and represent the Wckd Side
+                        wherever you go.
+                    </p>
+
+
+                    <!-- Replace # with actual Teespring store URL -->
+
+                    <a
+                        href="#"
+                        class="button button-primary"
+                        data-coming-soon="true"
+                    >
+                        VISIT MERCH STORE
+                    </a>
+
+                </div>
+
+
+                <div class="merch-visual">
+
+                    <div class="merch-glow"></div>
+
+                    <div class="merch-logo">
+                        W
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SOCIALS
+             ===================================================== -->
+
+        <section class="section socials-section" id="socials">
+
+            <div class="section-header">
+
+                <span class="section-kicker">
+                    JOIN THE COMMUNITY
+                </span>
+
+                <h2>
+                    FIND
+                    <span>THEWCKDONE</span>
+                </h2>
+
+                <div class="gold-divider"></div>
+
+                <p>
+                    Follow along and never miss what happens
+                    when the storm rolls in.
+                </p>
+
+            </div>
+
+
+            <div class="social-grid">
+
+
+                <!-- TWITCH -->
+
+                <a
+                    href="#"
+                    class="social-card"
+                    data-coming-soon="true"
+                >
+
+                    <span class="social-icon">
+                        ▶
+                    </span>
+
+                    <span class="social-name">
+                        TWITCH
+                    </span>
+
+                    <span class="social-status">
+                        LINK COMING SOON
+                    </span>
+
+                </a>
+
+
+                <!-- KICK -->
+
+                <a
+                    href="#"
+                    class="social-card"
+                    data-coming-soon="true"
+                >
+
+                    <span class="social-icon">
+                        K
+                    </span>
+
+                    <span class="social-name">
+                        KICK
+                    </span>
+
+                    <span class="social-status">
+                        LINK COMING SOON
+                    </span>
+
+                </a>
+
+
+                <!-- YOUTUBE -->
+
+                <a
+                    href="#"
+                    class="social-card"
+                    data-coming-soon="true"
+                >
+
+                    <span class="social-icon">
+                        ▶
+                    </span>
+
+                    <span class="social-name">
+                        YOUTUBE
+                    </span>
+
+                    <span class="social-status">
+                        LINK COMING SOON
+                    </span>
+
+                </a>
+
+
+                <!-- TIKTOK -->
+
+                <a
+                    href="#"
+                    class="social-card"
+                    data-coming-soon="true"
+                >
+
+                    <span class="social-icon">
+                        ♪
+                    </span>
+
+                    <span class="social-name">
+                        TIKTOK
+                    </span>
+
+                    <span class="social-status">
+                        LINK COMING SOON
+                    </span>
+
+                </a>
+
+
+                <!-- DISCORD -->
+
+                <a
+                    href="#"
+                    class="social-card"
+                    data-coming-soon="true"
+                >
+
+                    <span class="social-icon">
+                        ◇
+                    </span>
+
+                    <span class="social-name">
+                        DISCORD
+                    </span>
+
+                    <span class="social-status">
+                        LINK COMING SOON
+                    </span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER
+         ========================================================= -->
+
+    <footer class="site-footer">
+
+        <div class="footer-content">
+
+            <div class="footer-brand">
+                THEWCKD<span>ONE</span>
+            </div>
+
+            <p>
+                ENTER THE STORM. STAY WCKD.
+            </p>
+
+            <div class="footer-divider"></div>
+
+            <small>
+                © <span id="currentYear"></span>
+                TheWckdOne.
+                All rights reserved.
+            </small>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+         ========================================================= -->
+
+    <script src="script.js"></script>
+
 </body>
 </html>
