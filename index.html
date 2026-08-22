@@ -8,7 +8,7 @@
 
     <meta
         name="description"
-        content="The official home of TheWckdOne — gaming, streaming, community, and official merch."
+        content="The official home of TheWckdOne — gaming, streaming, community, and official merchandise."
     >
 
     <!-- Fonts -->
@@ -16,40 +16,61 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet"
     >
 
-    <!-- Main stylesheet -->
+    <!-- Website Styles -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- =========================================================
-         BACKGROUND ATMOSPHERE
-         ========================================================= -->
+    <!-- =====================================================
+         STORM BACKGROUND
+         ===================================================== -->
 
     <div class="storm-background" aria-hidden="true">
+
         <div class="storm-clouds"></div>
-        <div class="storm-purple-glow"></div>
-        <div class="rain rain-one"></div>
-        <div class="rain rain-two"></div>
-        <div class="lightning-flash"></div>
+
+        <div class="purple-atmosphere"></div>
+
+        <div class="rain rain-layer-one"></div>
+
+        <div class="rain rain-layer-two"></div>
+
+        <div class="rain rain-layer-three"></div>
+
+        <div class="lightning"></div>
+
     </div>
 
 
-    <!-- =========================================================
+    <!-- =====================================================
          NAVIGATION
-         ========================================================= -->
+         ===================================================== -->
 
     <header class="site-header">
 
         <div class="nav-container">
 
             <a href="#home" class="brand">
-                <span class="brand-main">THEWCKD</span><span class="brand-accent">ONE</span>
+
+                <span class="brand-the">
+                    THE
+                </span>
+
+                <span class="brand-wckd">
+                    WCKD
+                </span>
+
+                <span class="brand-one">
+                    ONE
+                </span>
+
             </a>
+
 
             <button
                 class="nav-toggle"
@@ -58,24 +79,39 @@
                 aria-label="Open navigation"
                 aria-expanded="false"
             >
+
                 <span></span>
                 <span></span>
                 <span></span>
+
             </button>
+
 
             <nav class="nav-menu" id="navMenu">
 
-                <a href="#home">Home</a>
+                <a href="#home">
+                    Home
+                </a>
 
-                <a href="#about">About</a>
+                <a href="#about">
+                    About
+                </a>
 
-                <a href="#games">Games</a>
+                <a href="#games">
+                    Games
+                </a>
 
-                <a href="#schedule">Schedule</a>
+                <a href="#schedule">
+                    Schedule
+                </a>
 
-                <a href="#merch">Merch</a>
+                <a href="#merch">
+                    Merch
+                </a>
 
-                <a href="#socials">Socials</a>
+                <a href="#socials">
+                    Socials
+                </a>
 
             </nav>
 
@@ -84,65 +120,81 @@
     </header>
 
 
-    <!-- =========================================================
-         HERO
-         ========================================================= -->
+    <!-- =====================================================
+         MAIN CONTENT
+         ===================================================== -->
 
     <main>
 
+
+        <!-- =================================================
+             HERO
+             ================================================= -->
+
         <section class="hero" id="home">
 
-            <div class="hero-atmosphere"></div>
+            <div class="hero-overlay"></div>
 
             <div class="hero-content">
 
-                <div class="status-badge" id="streamStatus">
 
-                    <span class="status-dot"></span>
+                <!-- LIVE STATUS -->
 
-                    <span id="statusText">
+                <div
+                    class="live-status"
+                    id="liveStatus"
+                    data-status="offline"
+                >
+
+                    <span class="live-status-dot"></span>
+
+                    <span id="liveStatusText">
                         OFFLINE
                     </span>
 
                 </div>
 
 
-                <!-- Generated TheWckdOne artwork -->
+                <!-- LOGO ARTWORK -->
 
-                <div class="hero-logo-container">
+                <div class="hero-logo">
 
                     <img
-                        src="TheWckdOneLogo.png"
-                        class="hero-logo"
-                        alt="TheWckdOne cracked purple and gold logo"
+                        src="thewckdone-logo.png"
+                        alt="TheWckdOne storm and cracked logo artwork"
                     >
 
                 </div>
 
 
-                <div class="hero-text">
+                <!-- HERO TEXT -->
 
-                    <p class="hero-kicker">
+                <div class="hero-copy">
+
+                    <span class="hero-kicker">
                         WELCOME TO THE WCKD SIDE
-                    </p>
+                    </span>
+
 
                     <h1>
                         ENTER THE
                         <span>STORM.</span>
                     </h1>
 
-                    <p class="hero-description">
+
+                    <p>
                         Gaming. Streaming. Community.
                         <br>
-                        Welcome to TheWckdOne.
+                        This is TheWckdOne.
                     </p>
 
                 </div>
 
 
+                <!-- HERO BUTTONS -->
+
                 <div class="hero-buttons">
 
-                    <!-- Replace # with his real Twitch URL -->
                     <a
                         href="#"
                         class="button button-primary"
@@ -150,6 +202,7 @@
                     >
                         WATCH LIVE
                     </a>
+
 
                     <a
                         href="#merch"
@@ -161,44 +214,57 @@
                 </div>
 
 
-                <div class="scroll-prompt">
+                <!-- SCROLL INDICATOR -->
 
-                    <span>SCROLL TO EXPLORE</span>
+                <a
+                    href="#about"
+                    class="scroll-indicator"
+                >
+
+                    <span>
+                        SCROLL TO ENTER
+                    </span>
 
                     <span class="scroll-arrow">
                         ↓
                     </span>
 
-                </div>
+                </a>
 
             </div>
 
         </section>
 
 
-        <!-- =====================================================
+        <!-- =================================================
              ABOUT
-             ===================================================== -->
+             ================================================= -->
 
-        <section class="section about-section" id="about">
+        <section
+            class="section about-section"
+            id="about"
+        >
 
-            <div class="section-header">
+            <div class="section-heading">
 
                 <span class="section-kicker">
                     THE WCKD SIDE
                 </span>
+
 
                 <h2>
                     WELCOME TO
                     <span>THEWCKDONE</span>
                 </h2>
 
+
                 <div class="gold-divider"></div>
 
+
                 <p>
-                    This isn't just another gaming channel.
-                    This is where gaming, chaos, competition,
-                    and community come together.
+                    This is where gaming, streaming,
+                    competition, chaos, and community
+                    come together.
                 </p>
 
             </div>
@@ -206,11 +272,14 @@
 
             <div class="about-grid">
 
+
                 <article class="about-card">
 
                     <span class="card-number">
                         01
                     </span>
+
+                    <div class="card-line"></div>
 
                     <h3>
                         GAMING
@@ -219,7 +288,7 @@
                     <p>
                         From competitive games to massive
                         open-world adventures, there's always
-                        something new to play.
+                        something new waiting inside the storm.
                     </p>
 
                 </article>
@@ -231,6 +300,8 @@
                         02
                     </span>
 
+                    <div class="card-line"></div>
+
                     <h3>
                         STREAMING
                     </h3>
@@ -238,7 +309,7 @@
                     <p>
                         Live gameplay, insane moments,
                         challenges, laughs, and everything
-                        that happens when the cameras turn on.
+                        that happens when TheWckdOne goes live.
                     </p>
 
                 </article>
@@ -249,6 +320,8 @@
                     <span class="card-number">
                         03
                     </span>
+
+                    <div class="card-line"></div>
 
                     <h3>
                         COMMUNITY
@@ -261,54 +334,67 @@
 
                 </article>
 
+
             </div>
 
         </section>
 
 
-        <!-- =====================================================
+        <!-- =================================================
              GAMES
-             ===================================================== -->
+             ================================================= -->
 
-        <section class="section games-section" id="games">
+        <section
+            class="section games-section"
+            id="games"
+        >
 
-            <div class="section-header">
+            <div class="section-heading">
 
                 <span class="section-kicker">
                     THE GAME VAULT
                 </span>
+
 
                 <h2>
                     WHAT'S
                     <span>PLAYING?</span>
                 </h2>
 
+
                 <div class="gold-divider"></div>
 
+
                 <p>
-                    The games will be added here as
-                    TheWckdOne's lineup is finalized.
+                    TheWckdOne plays a wide variety of games.
+                    The full lineup will be added here soon.
                 </p>
 
             </div>
 
 
-            <div class="games-container">
+            <div class="game-vault">
 
                 <div class="game-placeholder">
 
-                    <div class="placeholder-symbol">
+                    <div class="game-symbol">
                         W
                     </div>
 
+
                     <h3>
-                        GAMES COMING SOON
+                        GAME LIBRARY
                     </h3>
 
+
                     <p>
-                        TheWckdOne plays a wide variety of games.
-                        Check back soon for the full game lineup.
+                        Games coming soon.
                     </p>
+
+
+                    <span>
+                        THE STORM IS JUST GETTING STARTED
+                    </span>
 
                 </div>
 
@@ -317,103 +403,128 @@
         </section>
 
 
-        <!-- =====================================================
-             SCHEDULE
-             ===================================================== -->
+        <!-- =================================================
+             STREAM SCHEDULE
+             ================================================= -->
 
-        <section class="section schedule-section" id="schedule">
+        <section
+            class="section schedule-section"
+            id="schedule"
+        >
 
-            <div class="section-header">
+            <div class="section-heading">
 
                 <span class="section-kicker">
                     CATCH THE STORM
                 </span>
+
 
                 <h2>
                     STREAM
                     <span>SCHEDULE</span>
                 </h2>
 
+
                 <div class="gold-divider"></div>
+
+
+                <p>
+                    The official streaming schedule
+                    will be posted here.
+                </p>
 
             </div>
 
 
-            <div class="schedule-container">
-
-                <div class="schedule-card">
-
-                    <span class="schedule-day">
-                        DAY
-                    </span>
-
-                    <strong>
-                        STREAM TIME
-                    </strong>
-
-                    <p>
-                        Schedule coming soon
-                    </p>
-
-                </div>
+            <div class="schedule-grid">
 
 
-                <div class="schedule-card">
+                <article class="schedule-card">
 
                     <span class="schedule-day">
                         DAY
                     </span>
 
-                    <strong>
-                        STREAM TIME
-                    </strong>
+
+                    <h3>
+                        STREAM
+                    </h3>
+
 
                     <p>
                         Schedule coming soon
                     </p>
 
-                </div>
+                </article>
 
 
-                <div class="schedule-card">
+                <article class="schedule-card">
 
                     <span class="schedule-day">
                         DAY
                     </span>
 
-                    <strong>
-                        STREAM TIME
-                    </strong>
+
+                    <h3>
+                        STREAM
+                    </h3>
+
 
                     <p>
                         Schedule coming soon
                     </p>
 
-                </div>
+                </article>
+
+
+                <article class="schedule-card">
+
+                    <span class="schedule-day">
+                        DAY
+                    </span>
+
+
+                    <h3>
+                        STREAM
+                    </h3>
+
+
+                    <p>
+                        Schedule coming soon
+                    </p>
+
+                </article>
+
 
             </div>
 
         </section>
 
 
-        <!-- =====================================================
+        <!-- =================================================
              MERCH
-             ===================================================== -->
+             ================================================= -->
 
-        <section class="section merch-section" id="merch">
+        <section
+            class="section merch-section"
+            id="merch"
+        >
 
-            <div class="section-header">
+            <div class="section-heading">
 
                 <span class="section-kicker">
                     OFFICIAL MERCHANDISE
                 </span>
+
 
                 <h2>
                     REP THE
                     <span>WCKD SIDE</span>
                 </h2>
 
+
                 <div class="gold-divider"></div>
+
 
                 <p>
                     Official TheWckdOne merchandise.
@@ -422,27 +533,32 @@
             </div>
 
 
-            <div class="merch-showcase">
+            <div class="merch-container">
 
-                <div class="merch-content">
+
+                <div class="merch-copy">
 
                     <span class="merch-label">
                         THEWCKDONE
                     </span>
+
 
                     <h3>
                         WEAR THE
                         <span>STORM.</span>
                     </h3>
 
+
                     <p>
-                        Rock official TheWckdOne gear
-                        and represent the Wckd Side
-                        wherever you go.
+                        Official merchandise for everyone
+                        who stands on the Wckd Side.
                     </p>
 
 
-                    <!-- Replace # with actual Teespring store URL -->
+                    <!--
+                        Replace # with the real
+                        Teespring store URL.
+                    -->
 
                     <a
                         href="#"
@@ -455,12 +571,16 @@
                 </div>
 
 
-                <div class="merch-visual">
+                <div class="merch-art">
 
-                    <div class="merch-glow"></div>
+                    <div class="merch-light"></div>
 
-                    <div class="merch-logo">
+                    <div class="merch-w">
                         W
+                    </div>
+
+                    <div class="merch-text">
+                        THEWCKDONE
                     </div>
 
                 </div>
@@ -470,28 +590,34 @@
         </section>
 
 
-        <!-- =====================================================
+        <!-- =================================================
              SOCIALS
-             ===================================================== -->
+             ================================================= -->
 
-        <section class="section socials-section" id="socials">
+        <section
+            class="section socials-section"
+            id="socials"
+        >
 
-            <div class="section-header">
+            <div class="section-heading">
 
                 <span class="section-kicker">
                     JOIN THE COMMUNITY
                 </span>
+
 
                 <h2>
                     FIND
                     <span>THEWCKDONE</span>
                 </h2>
 
+
                 <div class="gold-divider"></div>
 
+
                 <p>
-                    Follow along and never miss what happens
-                    when the storm rolls in.
+                    Follow TheWckdOne across the web
+                    and never miss the next stream.
                 </p>
 
             </div>
@@ -512,13 +638,15 @@
                         ▶
                     </span>
 
-                    <span class="social-name">
-                        TWITCH
-                    </span>
 
-                    <span class="social-status">
+                    <strong>
+                        TWITCH
+                    </strong>
+
+
+                    <small>
                         LINK COMING SOON
-                    </span>
+                    </small>
 
                 </a>
 
@@ -535,13 +663,15 @@
                         K
                     </span>
 
-                    <span class="social-name">
-                        KICK
-                    </span>
 
-                    <span class="social-status">
+                    <strong>
+                        KICK
+                    </strong>
+
+
+                    <small>
                         LINK COMING SOON
-                    </span>
+                    </small>
 
                 </a>
 
@@ -558,13 +688,15 @@
                         ▶
                     </span>
 
-                    <span class="social-name">
-                        YOUTUBE
-                    </span>
 
-                    <span class="social-status">
+                    <strong>
+                        YOUTUBE
+                    </strong>
+
+
+                    <small>
                         LINK COMING SOON
-                    </span>
+                    </small>
 
                 </a>
 
@@ -581,13 +713,15 @@
                         ♪
                     </span>
 
-                    <span class="social-name">
-                        TIKTOK
-                    </span>
 
-                    <span class="social-status">
+                    <strong>
+                        TIKTOK
+                    </strong>
+
+
+                    <small>
                         LINK COMING SOON
-                    </span>
+                    </small>
 
                 </a>
 
@@ -604,15 +738,18 @@
                         ◇
                     </span>
 
-                    <span class="social-name">
-                        DISCORD
-                    </span>
 
-                    <span class="social-status">
+                    <strong>
+                        DISCORD
+                    </strong>
+
+
+                    <small>
                         LINK COMING SOON
-                    </span>
+                    </small>
 
                 </a>
+
 
             </div>
 
@@ -621,26 +758,39 @@
     </main>
 
 
-    <!-- =========================================================
+    <!-- =====================================================
          FOOTER
-         ========================================================= -->
+         ===================================================== -->
 
     <footer class="site-footer">
 
         <div class="footer-content">
 
+
             <div class="footer-brand">
-                THEWCKD<span>ONE</span>
+
+                <span>
+                    THEWCKD
+                </span>
+
+                <strong>
+                    ONE
+                </strong>
+
             </div>
+
 
             <p>
                 ENTER THE STORM. STAY WCKD.
             </p>
 
+
             <div class="footer-divider"></div>
 
+
             <small>
-                © <span id="currentYear"></span>
+                ©
+                <span id="currentYear"></span>
                 TheWckdOne.
                 All rights reserved.
             </small>
@@ -650,9 +800,9 @@
     </footer>
 
 
-    <!-- =========================================================
+    <!-- =====================================================
          JAVASCRIPT
-         ========================================================= -->
+         ===================================================== -->
 
     <script src="script.js"></script>
 
